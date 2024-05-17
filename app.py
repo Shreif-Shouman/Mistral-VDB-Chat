@@ -1,12 +1,13 @@
+import os
+import pickle
+import pandas as pd
 import streamlit as st
-from langchain.embeddings import HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain_community.llms import HuggingFaceEndpoint
-import os
-import pickle
-import pandas as pd
+from langchain.embeddings import HuggingFaceInstructEmbeddings
+
 
 
 def save_uploaded_file(uploaded_file, directory):
