@@ -34,7 +34,7 @@ def load_csv_data(csv_file_path):
     return video_data
 
 def get_conversation_chain(vectorstore):
-    api_key = os.environ['huggingface'] = st.secrets['huggingface']
+    api_key = os.environ['huggingface'] = st.secrets['api_key']
     llm = HuggingFaceEndpoint(repo_id="mistralai/Mistral-7B-Instruct-v0.2", api_key=api_key)
     conversation_chain = RetrievalQAWithSourcesChain.from_chain_type(
         llm=llm,
