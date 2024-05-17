@@ -1,5 +1,4 @@
 langchain
-os
 pickle
 langchain_community
 PyPDF2==3.0.1
