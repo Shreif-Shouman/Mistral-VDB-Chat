@@ -54,12 +54,13 @@ def handle_userinput(user_question, video_data):
     
     st.markdown("**Sources:**")
     source_urls = []
+    source_urls = set()  # Use a set to track unique URLs
     for source in sources:
         video_title = source.metadata['source']
         video_link = video_data.get(video_title, "")
-        source_urls.append(video_link)
-    for url in source_urls:
-        st.markdown(f"{url}")
+        if video_link not in source_urls:  # Check if the URL is already in the set
+            source_urls.add(video_link)  # Add the URL to the set
+            st.markdown(f"{video_link}")
 
 def main():
     
