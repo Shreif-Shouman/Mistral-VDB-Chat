@@ -1,5 +1,4 @@
 import streamlit as st
-#from dotenv import load_dotenv
 from langchain.embeddings import HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.memory import ConversationBufferMemory
@@ -62,7 +61,7 @@ def handle_userinput(user_question, video_data):
         st.markdown(f"{url}")
 
 def main():
-    #load_dotenv()
+    
     # Custom HTML/CSS for the banner
     custom_html = """
                 <div style="display: flex; justify-content: center; overflow: hidden; height: 200px; background-color: #f0f0f0;">
