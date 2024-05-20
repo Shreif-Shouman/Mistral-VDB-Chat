@@ -19,7 +19,6 @@ def save_uploaded_file(uploaded_file, directory):
 
 def load_faiss_index(folder_path, index_name):
     embeddings = HuggingFaceInstructEmbeddings(model_name="sentence-transformers/all-MiniLM-l6-v2")
-    index_path = os.path.join(folder_path, index_name + ".faiss")
     faiss_index = FAISS.load_local(folder_path, embeddings, index_name, allow_dangerous_deserialization=True)
     return faiss_index
 
@@ -39,7 +38,7 @@ def get_conversation_chain(vectorstore):
     conversation_chain = RetrievalQAWithSourcesChain.from_chain_type(
         llm=llm,
         chain_type="stuff",
-        retriever=vectorstore.as_retriever(),
+        retriever=vectorstore.as_retriever(search_type='similarity'),
         return_source_documents=True
     )
     return conversation_chain
