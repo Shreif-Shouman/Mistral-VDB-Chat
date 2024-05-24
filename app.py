@@ -51,7 +51,7 @@ def handle_userinput(user_question, video_data):
     st.markdown(f"**Question:** {user_question}")
     st.markdown(f"**Answer:** {answer}")
     
-    st.markdown("**Sources:**")
+    st.markdown("**Relevant webinars from IAEA.org:**")
     source_urls = []
     source_urls = set()  # Use a set to track unique URLs
     for source in sources:
