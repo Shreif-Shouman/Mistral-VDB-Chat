@@ -2,6 +2,7 @@ import os
 import pickle
 import pandas as pd
 import streamlit as st
+from dotenv import load_dotenv
 from langchain.vectorstores import FAISS
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import RetrievalQAWithSourcesChain
@@ -62,7 +63,7 @@ def handle_userinput(user_question, video_data):
             st.markdown(f"{video_link}")
 
 def main():
-    
+    load_dotenv()
     # Custom HTML/CSS for the banner
     custom_html = """
                 <div style="display: flex; justify-content: center; overflow: hidden; height: 200px; background-color: #f0f0f0;">
