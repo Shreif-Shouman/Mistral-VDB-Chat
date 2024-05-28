@@ -35,7 +35,7 @@ def load_csv_data(csv_file_path):
 
 def get_conversation_chain(vectorstore):
     #api_key = os.environ['HUGGINGFACEHUB_API_TOKEN'] = st.secrets['HUGGINGFACEHUB_API_TOKEN']
-    llm = HuggingFaceEndpoint(repo_id="mistralai/Mistral-7B-Instruct-v0.2")
+    llm = HuggingFaceEndpoint(repo_id="mistralai/Mistral-7B-Instruct-v0.2", token='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')
     conversation_chain = RetrievalQAWithSourcesChain.from_chain_type(
         llm=llm,
         chain_type="stuff",
@@ -63,7 +63,7 @@ def handle_userinput(user_question, video_data):
             st.markdown(f"{video_link}")
 
 def main():
-    load_dotenv()
+    #load_dotenv()
     # Custom HTML/CSS for the banner
     custom_html = """
                 <div style="display: flex; justify-content: center; overflow: hidden; height: 200px; background-color: #f0f0f0;">
